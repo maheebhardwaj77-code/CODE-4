@@ -44,3 +44,11 @@ def USD_(m):
     INR = (m * 80)
     print(INR)
 USD_(10)
+
+#WAF for even and odd number:-
+def no_(s):
+    if(s % 2 == 0):
+        print("even")
+    else:
+        print("odd")
+no_(100)         
