@@ -52,3 +52,5 @@ def no_(s):
     else:
         print("odd")
 no_(100)         
+
+print("ok guys")
