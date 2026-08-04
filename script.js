@@ -1,7 +1,9 @@
-let fact = 1;
-let n = Number(prompt("enter your number :"));
-for(let i = 1; i <= n; i++) {
-    fact = fact * i;
+let count = 0;
+let num = Number(prompt("enter your number :"))
+
+while(num > 0) {
+    count++;
+    num = Math.floor(num/10);
 }
 
-console.log(fact);
+console.log(count);
