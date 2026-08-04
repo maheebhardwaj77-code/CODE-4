@@ -1,7 +1,7 @@
-let num = 12345567;
-let count = 0;
-while (num > 0) {
-    count++;
-    num = Math.floor(num / 10);
+let fact = 1;
+let n = Number(prompt("enter your number :"));
+for(let i = 1; i <= n; i++) {
+    fact = fact * i;
 }
-console.log("total digits :",count);
+
+console.log(fact);
