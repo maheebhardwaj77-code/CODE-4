@@ -1,9 +1,12 @@
-let count = 0;
-let num = Number(prompt("enter your number :"))
+let reverseNumber = function(num) {
+    let reverse = 0;
 
-while(num > 0) {
-    count++;
-    num = Math.floor(num/10);
+    while(num > 0) {
+        let digit = num % 10;
+        reverse = reverse * 10 + digit;
+        num = Math.floor(num/10);
+    }
+    return reverse;
 }
 
-console.log(count);
+console.log(reverseNumber(12345));
