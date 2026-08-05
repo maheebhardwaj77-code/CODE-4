@@ -59,3 +59,13 @@ array.some(function(val) {
 array.every(function(val) {
     return (any condition);            = it check that all the item pass the condition or not and it also give answer in true or false.
 })
+
+Destructure array :-
+let num = [1, 2, 3, 4, 5];
+let [a, b, , c] = num;
+so now a = 1, b = 2, c = 4
+
+spread operator :-
+let a = [1, 2];
+let b = [3, 4];
+let c = [...a, ...b];
