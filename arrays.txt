@@ -1,0 +1,61 @@
+array[index_no]; = use to print the item of that. 
+
+array.push("item"or val); = use to add item or any val at the end of array.
+
+array.unshift("item" or val); = use to add item or any val at the starting of array.
+
+array.pop(); = use to remove any item or val from the ending of the array.
+
+array.splice(index_no, how many members); = isko ham use karta ha kisi bhi index_no ka item ko remove karna ka lia or how many members ki jaha ham likhta ha ki tikta remove karna ha.
+
+array.splice(index_no, how many members, adding val or item); = is method sa ham item remove karna ka bad use item bhi add kar sakta ha.
+
+array.slice(index_no, how many members + 1); = iska use splice jasa hi ha bas ya remove karna ki jaya un item or val ko new array ka dal data ha kisi ham alag sa exxces kar sakta ha.
+
+array.reverse(); = by this we can the array.
+
+array.sort(); = it always want an funcution.
+
+let ans = array.sort(function(a, b) {
+    return a - b;                            = by this we can arrange the item in accending order. 
+})
+
+let ans = array.sort(function(a, b) {
+    return b - a;                            = by this we can aarange the item in decending order.
+})
+
+array.forEach(function(val) {
+                                          = this is use to run code for each item in the array.                                          
+})
+
+array.map(); = use when jab hama new array banana ha purana array ka data par.
+
+let ans = array.map(function() {
+    return (what do you want);          = syntax for map.
+})
+
+array.filter(); = ya ek new array banata ha jisma ya purana array ka item ko lata ha aur kuch ko chod data ha.
+
+array.filter(function(val) {
+    if(any condition) {
+        return (true or false);     = syntax for filter.     
+    }
+})
+
+array.reduce(); = jab hama pura array ko kisi single value ma convert karna hoga.
+
+let ans = array.reduce(function(accumulator, val) {
+    return accumulator + val;                       = example use of reduce.
+},(value of accumulator));
+
+array.find(function(val) {
+    return (that want you to find);    = use find item in array.
+})
+
+array.some(function(val) {
+    return val                          = also use to find but it give answer in true or false.
+})
+
+array.every(function(val) {
+    return (any condition);            = it check that all the item pass the condition or not and it also give answer in true or false.
+})

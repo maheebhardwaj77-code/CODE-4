@@ -1,12 +1,6 @@
-let reverseNumber = function(num) {
-    let reverse = 0;
+let array = [1, 5, 7, 2, 9, 3];
 
-    while(num > 0) {
-        let digit = num % 10;
-        reverse = reverse * 10 + digit;
-        num = Math.floor(num/10);
-    }
-    return reverse;
-}
-
-console.log(reverseNumber(12345));
+ let ans = array.sort(function(a, b) {
+    return b - a;
+});
+console.log(ans)
