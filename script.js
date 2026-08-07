@@ -1,36 +1,18 @@
-const input = document.getElementById("studentName");
-const addBtn = document.getElementById("addBtn");
-const studentList = document.getElementById("studentList");
-const count = document.getElementById("count");
+const bulb = document.getElementById("bulb");
+const btn = document.getElementById("btn");
 
-let totalStudents = 0;
+let isOn = false;
 
-addBtn.addEventListener("click", function () {
+btn.addEventListener("click", function () {
 
-    let name = input.value.trim();
-
-    if (name === "") {
-        alert("Please enter a student name");
-        return;
+    if (isOn === false) {
+        bulb.src = "https://www.w3schools.com/js/pic_bulbon.gif";
+        btn.innerText = "Turn OFF";
+        isOn = true;
+    } else {
+        bulb.src = "https://www.w3schools.com/js/pic_bulboff.gif";
+        btn.innerText = "Turn ON";
+        isOn = false;
     }
 
-    let li = document.createElement("li");
-    li.innerText = name + " ";
-
-    let deleteBtn = document.createElement("button");
-    deleteBtn.innerText = "Delete";
-
-    deleteBtn.addEventListener("click", function () {
-        li.remove();
-        totalStudents--;
-        count.innerText = totalStudents;
-    });
-
-    li.appendChild(deleteBtn);
-    studentList.appendChild(li);
-
-    totalStudents++;
-    count.innerText = totalStudents;
-
-    input.value = "";
 });
