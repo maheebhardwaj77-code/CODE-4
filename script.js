@@ -16,3 +16,5 @@ btn.addEventListener("click", function () {
     }
 
 });
+
+console.log("hello dosto")
