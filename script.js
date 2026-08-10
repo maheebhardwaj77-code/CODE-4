@@ -1,20 +1,4 @@
-const bulb = document.getElementById("bulb");
-const btn = document.getElementById("btn");
-
-let isOn = false;
-
-btn.addEventListener("click", function () {
-
-    if (isOn === false) {
-        bulb.src = "https://www.w3schools.com/js/pic_bulbon.gif";
-        btn.innerText = "Turn OFF";
-        isOn = true;
-    } else {
-        bulb.src = "https://www.w3schools.com/js/pic_bulboff.gif";
-        btn.innerText = "Turn ON";
-        isOn = false;
-    }
-
-});
-
-console.log("hello dosto")
+let a = document.querySelector("a");
+a.removeAttribute("href")
+//a.setAttribute("src", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeBxRVDN84QussXLTTKXMYcU4w3vo4tOqbGpkJZp4Bb6B7prS_yyvQDeY&s=10")
+console.dir(a);
