@@ -1,4 +1,2 @@
-let li = document.querySelectorAll("li")
-li.forEach(function(val) {
-    console.log(val.textContent);
-});
+let a = document.querySelector("a")
+a.setAttribute("href", "https://sheryians.com")
