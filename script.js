@@ -1,2 +1,4 @@
-let a = document.querySelector("a")
-a.setAttribute("href", "https://sheryians.com")
+let li = document.querySelectorAll("ul li:nth-child(2n)");
+li.forEach(function(val) {
+    val.classList.add("lol");
+})
