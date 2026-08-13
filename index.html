@@ -4,16 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>html file</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+
+        #main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            background-color: #222;
+        }
+
+        h1{
+            color: #555;
+            font-size: 9rem;
+            font-weight: 200;
+            user-select: none;
+        }
+
+    </style>
 </head>
 <body>
-    <h3>select your device :-</h3>
-    <select>
-        <option selected disabled>Choose Your device</option>
-        <option value="samsung">samsung</option>
-        <option value="apple">apple</option>
-        <option value="motorola">motorola</option>
-        <option value="realme">realme</option>
-    </select>
+    <div id="main">
+        <h1>a</h1>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,7 +1,9 @@
-let h3 = document.querySelector("h3");
-let slt = document.querySelector("select");
+let h1 = document.querySelector("h1");
 
-slt.addEventListener("change", function(val) {
-    console.log(val.target.value);
-    h3.textContent = `${val.target.value} Device selected :`
+window.addEventListener("keydown", function(val) {
+    if (val.key !== " ") {
+        h1.textContent = val.key;
+    } else {
+        h1.textContent = "Space"
+    }
 });
