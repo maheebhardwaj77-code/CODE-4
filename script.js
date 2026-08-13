@@ -1,7 +1,7 @@
-let input = document.querySelector("input");
+let h3 = document.querySelector("h3");
+let slt = document.querySelector("select");
 
-input.addEventListener("input", function(val) {
-    if(val.data !== " " && val.data !== null) {
-        console.log(val.data);
-    } 
+slt.addEventListener("change", function(val) {
+    console.log(val.target.value);
+    h3.textContent = `${val.target.value} Device selected :`
 });
