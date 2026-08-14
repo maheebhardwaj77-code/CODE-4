@@ -26,18 +26,31 @@
             background-color: #222;
         }
 
-        h1{
-            color: #555;
-            font-size: 9rem;
-            font-weight: 200;
+        #main input{
+            display: none;
+        }
+
+        #main #btn{
+            color: white;
+            background-color: rgb(31, 126, 126);
+            padding: 8px 10px;
+            border-radius: 30px;
+            font-size: 20px;
+            font-weight: 500;
             user-select: none;
+        }
+
+        #main #btn:hover {
+            background-color: rgb(24, 99, 99);
+            font-size: 23px;
         }
 
     </style>
 </head>
 <body>
     <div id="main">
-        <h1>a</h1>
+        <input id="file" type="file">
+        <div id="btn">upload file</div>
     </div>
     <script src="script.js"></script>
 </body>

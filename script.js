@@ -1,9 +1,10 @@
-let h1 = document.querySelector("h1");
+let btn = document.querySelector("#btn");
+let fileinp = document.querySelector("#file");
 
-window.addEventListener("keydown", function(val) {
-    if (val.key !== " ") {
-        h1.textContent = val.key;
-    } else {
-        h1.textContent = "Space"
-    }
+btn.addEventListener("click", function() {
+    fileinp.click();
+});
+
+fileinp.addEventListener("change", function (val) {
+    btn.textContent = val.target.files[0].name;
 });
