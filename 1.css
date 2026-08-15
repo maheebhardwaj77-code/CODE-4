@@ -10,19 +10,13 @@ html,body{
     height: 100%;
     background-color: #222;
     color: white;
+    overflow: hidden;
 }
 
 #a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 45%;
-}
-
-#a h2{
-    padding: 10px;
-    border-radius: 25px;
-    font-size: 25px;
-    user-select: none;
+    position: absolute;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1ms;
+    width: 100px;
+    height: 100px;
     background-color: rgb(32, 169, 162);
 }
