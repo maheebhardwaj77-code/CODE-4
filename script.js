@@ -1,38 +1,12 @@
-let main = document.querySelector("#main");
-let form = document.querySelector("form");
-let input = document.querySelectorAll("input");
+let a = document.querySelector("#a");
+let h2 = document.querySelector("h2");
 
-form.addEventListener("submit", function(det) {
-    det.preventDefault();
-    
-    let card = document.createElement("div");
-    card.classList.add("card");
+a.addEventListener("mouseover", function() {
+    h2.style.backgroundColor = "rgb(17, 94, 90)";
+    h2.style.fontSize = "30px"
+});
 
-    let profile = document.createElement("div");
-    profile.classList.add("profile");
-
-    let img = document.createElement("img");
-    img.setAttribute("src", input[0].value);
-    profile.appendChild(img);
-    card.appendChild(profile);
-
-    let h2 = document.createElement("h2");
-    h2.textContent = input[1].value;
-    card.appendChild(h2);
-
-    let h3 = document.createElement("h3");
-    h3.textContent = input[2].value;
-    card.appendChild(h3);
-
-    let p = document.createElement("p")
-    p.textContent = input[3].value;
-    card.appendChild(p);
-
-    main.appendChild(card);
-
-    input.forEach(function(val) {
-        if (val.type !== "submit") {
-            val.value = "";
-        }
-    });
+a.addEventListener("mouseout", function() {
+    h2.style.backgroundColor = "rgb(32, 169, 162)";
+    h2.style.fontSize = "25px"
 });
