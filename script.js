@@ -1,14 +1,13 @@
-let inp = document.querySelector("input")
-let h2 = document.querySelector("h2 span")
+let nm = document.querySelector("#name");
+let form = document.querySelector("form");
+let mail = document.querySelector("#mail")
 
-inp.addEventListener("input", function(det) {
-    let left = 20 - inp.value.length;
-    if(left < 0) {
-        h2.textContent = left
-        h2.style.color = "red"
+form.addEventListener("submit", function(det) {
+    det.preventDefault();
+    if (nm.value.length <= 2) {
+        document.querySelector("#hide").style.display = "initial"
     }
-    else {
-        h2.textContent = left;
-        h2.style.color = "white"
+    else{
+        document.querySelector("#hide").style.display = "none"
     }
 });

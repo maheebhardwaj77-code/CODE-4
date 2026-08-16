@@ -6,12 +6,39 @@
     <title>Document</title>
     <link rel="stylesheet" href="1.css">
     <style>
+        .small{
+            color: red;
+            font-size: 13px;
+        }
+
+        #hide{
+            display: none;
+        }
     </style>
 </head>
 <body>
-    <h1 id="a">Characters Counter :-</h1>
-    <input type="text" placeholder="         write anything">
-    <h2>Characters Left : <span>20</span></h1>
+    <h2>Form Validation :-</h2>
+    <form>
+        <input id="name" type="text" placeholder="urer name">
+        <div id="hide">
+            <br>
+            <small class="small">your name should be greater than 2 characters !</small>
+        </div>
+        <br><br>
+        <input type="text" placeholder="email">
+        <br><br>
+        <input type="text" placeholder="password">
+        <br><br>
+        <select>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">other</option>
+        </select>
+        <br><br>
+        <textarea placeholder="Tell us about you"></textarea>
+        <br><br>
+        <input type="submit">
+    </form>
     <script src="script.js"></script>
 </body>
 </html>
