@@ -3,35 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Email Password Validator</title>
+    <title>Email & Password Validator</title>
     <link rel="stylesheet" href="1.css">
 </head>
+
 <body>
 
     <div class="container">
-        <h2>Login Form</h2>
 
-        <form autocomplete="off" id="loginForm">
+        <form id="loginForm">
 
-            <div class="input-box">
+            <h1>Login</h1>
+            <p class="subtitle">Enter your email and password</p>
+
+            <!-- Email -->
+            <div class="form-group">
                 <label for="email">Email</label>
-                <input type="text" id="email" placeholder="Enter your email">
-                <p id="emailError"></p>
+                <input 
+                    type="text" 
+                    id="email" 
+                    placeholder="Enter your email"
+                >
+                <span id="emailError"></span>
             </div>
 
-            <div class="input-box">
+            <!-- Password -->
+            <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Enter your password">
-                <p id="passwordError"></p>
+                <input 
+                    type="password" 
+                    id="password" 
+                    placeholder="Enter your password"
+                >
+                <span id="passwordError"></span>
             </div>
 
+            <!-- Button -->
             <button type="submit">Login</button>
 
+            <!-- Success message -->
             <p id="successMessage"></p>
 
         </form>
+
     </div>
 
     <script src="script.js"></script>
+
 </body>
 </html>
