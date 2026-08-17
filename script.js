@@ -1,40 +1,29 @@
-let form = document.querySelector("#loginForm")
-let email = document.querySelector("#email")
-let pass = document.querySelector("#password")
+let body = document.querySelector("body")
+let btn = document.querySelector("button")
 
-form.addEventListener("submit", function(det) {
-    det.preventDefault();
+function setDarkOrLight() {
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        body.classList.add("dark")
+        body.classList.remove("light")
+    } else {
+        body.classList.add("light")
+        body.classList.remove("dark")
+    }
+}
 
-    const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
-    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+setDarkOrLight();
 
-    let emailans = emailRegex.test(email.value);
-    let passans = passwordRegex.test(pass.value);
-
-    let isValid = true;
-
-    if(!emailans) {
-        document.querySelector("#emailError").textContent = "Invalid Email !";
-        email.value = "";
-        isValid = false;
+btn.addEventListener("click", function() {
+    if(body.classList.contains("dark")) {
+        body.classList.remove("dark");
+        body.classList.add("light");
     }
     else {
-        document.querySelector("#emailError").textContent = "";
-    };
-
-    if(!passans) {
-        document.querySelector("#passwordError").textContent = "Invalid Password !";
-        pass.value = "";
-        isValid = false;
+        body.classList.remove("light")
+        body.classList.add("dark")
     }
-    else {
-        document.querySelector("#passwordError").textContent = "";
-    };
+})
 
-    if(isValid) {
-        document.querySelector("#successMessage").textContent = "Everything is Correct";
-    }
-    else {
-        document.querySelector("#successMessage").textContent = "";
-    };
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function() {
+    setDarkOrLight();
 })
