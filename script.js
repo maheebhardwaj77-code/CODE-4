@@ -16,7 +16,7 @@ const users = [
   },
   {
     name: "Lion",
-    pic: "https://images.unsplash.com/photo-1552410260-0fd9b577afa6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    pic: "https://images.unsplash.com/photo-1552410260-0fd9b577afa6?q=80&w=1470&auto=format&fit=crop",
     bio: "Lions are powerful social animals that live and hunt together in groups."
   },
   {
@@ -26,7 +26,7 @@ const users = [
   },
   {
     name: "Giraffe",
-    pic: "https://images.unsplash.com/photo-1566160995964-4d7bd54dbaf4?q=80&w=685&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    pic: "https://images.unsplash.com/photo-1566160995964-4d7bd54dbaf4?q=80&w=685&auto=format&fit=crop",
     bio: "Giraffes use their long necks to reach leaves high above the ground."
   },
   {
@@ -36,55 +36,46 @@ const users = [
   }
 ];
 
+const cards = document.querySelector(".cards");
+const inp = document.querySelector(".inp");
+
 function showUsers(arr) {
-    arr.forEach(function(user) {
-       // Create Outer card div 
-       const card = document.createElement("div");
-       card.classList.add("card");
+  cards.innerHTML = "";
 
-       //Create image
-       const img = document.createElement("img");
-       img.src = user.pic;
-       img.classList.add("bg-img");
+  arr.forEach(user => {
+    const card = document.createElement("div");
+    card.className = "card";
 
-       //create blurred-layer div 
-       const blurredLayer = document.createElement("div");
-       blurredLayer.style.backgroundImage = `url(${user.pic})`;
-       blurredLayer.classList.add("blurred-layer");
+    card.innerHTML = `
+      <img src="${user.pic}" class="bg-img">
 
-       //Create content div
-       const content = document.createElement("div");
-       content.classList.add("content");
+      <div class="blurred-layer"
+           style="background-image: url('${user.pic}')">
+      </div>
 
-       //Create h3 and paragraph 
-       const heading = document.createElement("h3");
-       heading.textContent = user.name;
+      <div class="content">
+        <h3>${user.name}</h3>
+        <p>${user.bio}</p>
+      </div>
+    `;
 
-       const para = document.createElement("p");
-       para.textContent = user.bio;
-
-       //Append heading and paragraph to content 
-       content.appendChild(heading);
-       content.appendChild(para);
-
-       //Append all to card
-       card.appendChild(img);
-       card.appendChild(blurredLayer);
-       card.appendChild(content);
-
-       //Finally, append card to the body or any container
-       document.querySelector(".cards").appendChild(card);
-})};
+    cards.appendChild(card);
+  });
+}
 
 showUsers(users);
 
-let inp = document.querySelector(".inp");
-inp.addEventListener("input", function() {
-  let newUsers = users.filter((user) => {
-    return user.name.startsWith(inp.value)
-  });
+inp.addEventListener("input", () => {
+  const searchValue = inp.value.toLowerCase();
 
-  document.querySelector(".cards").innerHTML = ""
+  const filteredUsers = users.filter(user =>
+    user.name.toLowerCase().startsWith(searchValue)
+  );
 
-  showUsers(newUsers);
+  if(filteredUsers.length === 0) {
+    cards.textContent = "No User found !";
+    cards.style.color = "red"
+  } else {
+    showUsers(filteredUsers);
+  }
 });
