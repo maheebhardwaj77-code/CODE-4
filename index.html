@@ -1,36 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Color Changer</title>
+  <title>Character Counter</title>
 
   <style>
     body {
       font-family: Arial;
+      padding: 50px;
       text-align: center;
-      padding-top: 100px;
     }
 
-    button {
-      padding: 15px 25px;
+    textarea {
+      width: 400px;
+      height: 150px;
+      padding: 10px;
       font-size: 18px;
-      cursor: pointer;
+      resize: none;
     }
 
-    #colorName {
-      margin-top: 20px;
-      font-size: 25px;
+    #counter {
+      font-size: 20px;
+      margin-top: 15px;
     }
   </style>
 </head>
 
 <body>
 
-  <h1>Background Color Changer</h1>
+  <h1>Character Counter</h1>
 
-  <button id="changeColor">Change Color</button>
+  <textarea id="message" placeholder="Write something..."></textarea>
 
-  <div id="colorName">White</div>
+  <div id="counter">Characters: 0</div>
 
   <script src="script.js"></script>
+
 </body>
 </html>
