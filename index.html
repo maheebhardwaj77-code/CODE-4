@@ -1,37 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Character Counter</title>
+  <title>Password Toggle</title>
 
   <style>
     body {
       font-family: Arial;
-      padding: 50px;
       text-align: center;
+      padding-top: 100px;
     }
 
-    textarea {
-      width: 400px;
-      height: 150px;
-      padding: 10px;
-      font-size: 18px;
-      resize: none;
+    .box {
+      width: 350px;
+      margin: auto;
     }
 
-    #counter {
-      font-size: 20px;
-      margin-top: 15px;
+    input {
+      width: 220px;
+      padding: 12px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 12px 18px;
+      margin-left: 5px;
+      cursor: pointer;
     }
   </style>
 </head>
 
 <body>
 
-  <h1>Character Counter</h1>
+  <div class="box">
 
-  <textarea id="message" placeholder="Write something..."></textarea>
+    <h1>Password</h1>
 
-  <div id="counter">Characters: 0</div>
+    <input type="password" id="password" placeholder="Enter password">
+
+    <button id="toggle">Show</button>
+
+  </div>
 
   <script src="script.js"></script>
 

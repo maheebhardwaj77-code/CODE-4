@@ -1,7 +1,12 @@
-let mess = document.querySelector("#message");
-let count = document.querySelector("#counter");
+let inp = document.querySelector("#password");
+let btn = document.querySelector("#toggle");
 
-mess.addEventListener("input", function() {
-    count.textContent = `Characters: ${mess.value.length}`;
-    
-})
+btn.addEventListener("click", function() {
+    if(inp.type === "password") {
+        inp.setAttribute("type", "text");
+        btn.textContent = "Hide";
+    } else {
+        inp.setAttribute("type", "password");
+        btn.textContent = "Show";
+    };
+});
