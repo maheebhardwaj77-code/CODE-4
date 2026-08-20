@@ -1,45 +1,76 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Password Toggle</title>
+  <title>Registration Form</title>
 
   <style>
     body {
       font-family: Arial;
-      text-align: center;
-      padding-top: 100px;
+      background: #f2f2f2;
+      padding: 50px;
     }
 
-    .box {
+    form {
+      background: white;
       width: 350px;
       margin: auto;
+      padding: 25px;
+      border-radius: 10px;
+    }
+
+    h2 {
+      text-align: center;
     }
 
     input {
-      width: 220px;
-      padding: 12px;
-      font-size: 16px;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px;
+      margin: 8px 0;
     }
 
     button {
-      padding: 12px 18px;
-      margin-left: 5px;
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
       cursor: pointer;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+    }
+
+    #success {
+      color: green;
+      text-align: center;
     }
   </style>
 </head>
 
 <body>
 
-  <div class="box">
+  <form id="form">
 
-    <h1>Password</h1>
+    <h2>Registration</h2>
 
-    <input type="password" id="password" placeholder="Enter password">
+    <input type="text" id="name" placeholder="Enter Name">
+    <div id="nameError" class="error"></div>
 
-    <button id="toggle">Show</button>
+    <input type="text" id="email" placeholder="Enter Email">
+    <div id="emailError" class="error"></div>
 
-  </div>
+    <input type="text" id="password" placeholder="Enter Password">
+    <div id="passwordError" class="error"></div>
+
+    <input type="text" id="confirmPassword" placeholder="Confirm Password">
+    <div id="confirmError" class="error"></div>
+
+    <button type="submit">Register</button>
+
+    <p id="success"></p>
+
+  </form>
 
   <script src="script.js"></script>
 
