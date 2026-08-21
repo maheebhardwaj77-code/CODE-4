@@ -1,83 +1,30 @@
-let form = document.querySelector("#form");
+const { createElement } = require("react");
 
-let name = document.querySelector("#name");
-let email = document.querySelector("#email");
-let password = document.querySelector("#password");
-let confirmPassword = document.querySelector("#confirmPassword");
+let timer = document.querySelector("#timer");
+let start = document.querySelector("#start");
+let stop = document.querySelector("#stop");
+let reset = document.querySelector("#reset");
+let count = 10
+let tm1;
 
-let nameError = document.querySelector("#nameError");
-let emailError = document.querySelector("#emailError");
-let passwordError = document.querySelector("#passwordError");
-let confirmError = document.querySelector("#confirmError");
+start.addEventListener("click", function() {
+    tm1 = setInterval(() => {
+        count--;
+        timer.textContent = count;
+        document.createElement("h4");
 
-let success = document.querySelector("#success");
+        if(count <= 0) {
+            clearInterval(tm1);
+        }
+    }, 1000);
+});
 
+stop.addEventListener("click", function() {
+    clearInterval(tm1);
+});
 
-// Email Regex
-let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-// Password Regex
-let passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-
-
-form.addEventListener("submit", function(event) {
-
-    event.preventDefault();
-
-    // Pehle errors clear karo
-    nameError.textContent = "";
-    emailError.textContent = "";
-    passwordError.textContent = "";
-    confirmError.textContent = "";
-    success.textContent = "";
-
-    let isValid = true;
-
-
-    // Name validation
-    if (name.value.trim() === "") {
-        nameError.textContent = "Name is required";
-        isValid = false;
-    }
-
-
-    // Email validation
-    if (email.value.trim() === "") {
-        emailError.textContent = "Email is required";
-        isValid = false;
-
-    } else if (!emailRegex.test(email.value)) {
-        emailError.textContent = "Enter a valid email";
-        isValid = false;
-    }
-
-
-    // Password validation
-    if (password.value === "") {
-        passwordError.textContent = "Password is required";
-        isValid = false;
-
-    } else if (!passwordRegex.test(password.value)) {
-        passwordError.textContent =
-            "Password must contain uppercase, lowercase, number and special character";
-        isValid = false;
-    }
-
-
-    // Confirm password validation
-    if (confirmPassword.value === "") {
-        confirmError.textContent = "Please confirm your password";
-        isValid = false;
-
-    } else if (confirmPassword.value !== password.value) {
-        confirmError.textContent = "Passwords do not match";
-        isValid = false;
-    }
-
-
-    // Final result
-    if (isValid) {
-        success.textContent = "Registration successful!";
-    }
-
+reset.addEventListener("click", function() {
+    clearInterval(tm1);
+    count = 10;
+    timer.textContent = 10;
 });

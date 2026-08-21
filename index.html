@@ -1,78 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Registration Form</title>
+  <title>Countdown</title>
 
   <style>
     body {
       font-family: Arial;
-      background: #f2f2f2;
-      padding: 50px;
-    }
-
-    form {
-      background: white;
-      width: 350px;
-      margin: auto;
-      padding: 25px;
-      border-radius: 10px;
-    }
-
-    h2 {
       text-align: center;
+      padding-top: 100px;
     }
 
-    input {
-      width: 100%;
-      box-sizing: border-box;
-      padding: 10px;
-      margin: 8px 0;
+    #timer {
+      font-size: 60px;
+      margin: 30px;
     }
 
     button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      cursor: pointer;
-    }
-
-    .error {
-      color: red;
-      font-size: 14px;
-    }
-
-    #success {
-      color: green;
-      text-align: center;
+      padding: 12px 25px;
+      margin: 5px;
     }
   </style>
 </head>
 
 <body>
 
-  <form id="form">
+  <h1>Countdown</h1>
 
-    <h2>Registration</h2>
+  <div id="timer">10</div>
 
-    <input type="text" id="name" placeholder="Enter Name">
-    <div id="nameError" class="error"></div>
-
-    <input type="text" id="email" placeholder="Enter Email">
-    <div id="emailError" class="error"></div>
-
-    <input type="text" id="password" placeholder="Enter Password">
-    <div id="passwordError" class="error"></div>
-
-    <input type="text" id="confirmPassword" placeholder="Confirm Password">
-    <div id="confirmError" class="error"></div>
-
-    <button type="submit">Register</button>
-
-    <p id="success"></p>
-
-  </form>
+  <button id="start">Start</button>
+  <button id="stop">Stop</button>
+  <button id="reset">Reset</button>
 
   <script src="script.js"></script>
-
 </body>
 </html>
